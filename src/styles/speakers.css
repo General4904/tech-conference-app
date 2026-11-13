@@ -1,0 +1,13 @@
+@import '../index.css';
+
+.speakers-section h2 {
+    color: var(--color-accent);
+}
+
+li.speakers-section-list-item {
+    border: 1px solid var(--color-border);
+}
+
+.speakers-section-list-item .profile-section {
+    border-bottom: 1px solid var(--color-border);
+}

@@ -1,0 +1,330 @@
+{
+  "conference": {
+    "name": "DevConf 2025",
+    "tagline": "Where builders shape the future",
+    "date": "2025-10-15",
+    "endDate": "2025-10-17",
+    "location": "Metro Convention Center, San Francisco, CA",
+    "heroImage": "./assets/images/hero.jpg"
+  },
+  "featuredKeynote": {
+    "id": "talk-001",
+    "title": "The Next Decade of the Web",
+    "speakerId": "speaker-001",
+    "trackId": "track-01",
+    "day": "day-1",
+    "time": "09:00",
+    "endTime": "10:00",
+    "location": "Main Hall",
+    "isKeynote": true,
+    "description": "A look at the technologies, patterns, and platforms that will define the web over the next ten years.",
+    "isSaved": false
+  },
+  "tracks": [
+    {
+      "id": "track-01",
+      "name": "Frontend",
+      "color": "#6C5CE7",
+      "description": "UI engineering, frameworks, accessibility, and design systems."
+    },
+    {
+      "id": "track-02",
+      "name": "Backend",
+      "color": "#00B894",
+      "description": "APIs, databases, distributed systems, and scaling."
+    },
+    {
+      "id": "track-03",
+      "name": "AI & ML",
+      "color": "#E17055",
+      "description": "Models, tooling, and practical applications of AI."
+    },
+    {
+      "id": "track-04",
+      "name": "DevOps & Cloud",
+      "color": "#0984E3",
+      "description": "CI/CD, infrastructure as code, and reliability."
+    },
+    {
+      "id": "track-05",
+      "name": "Design & UX",
+      "color": "#FD79A8",
+      "description": "Product design, research, and interaction patterns."
+    }
+  ],
+  "days": [
+    {
+      "id": "day-1",
+      "label": "Day 1",
+      "date": "2025-10-15",
+      "name": "Foundations"
+    },
+    {
+      "id": "day-2",
+      "label": "Day 2",
+      "date": "2025-10-16",
+      "name": "Scale & Systems"
+    },
+    {
+      "id": "day-3",
+      "label": "Day 3",
+      "date": "2025-10-17",
+      "name": "The Future"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "speaker-001",
+      "name": "Ava Thompson",
+      "title": "Principal Engineer",
+      "company": "Nimbus Labs",
+      "avatar": "./assets/images/avatars/ava-thompson.png",
+      "bio": "Ava has spent 15 years building web platforms and leads the platform team at Nimbus Labs. She is a frequent keynote speaker and open-source contributor.",
+      "talkIds": ["talk-001", "talk-006"],
+      "socials": {
+        "twitter": "https://twitter.com/avathompson",
+        "github": "https://github.com/avathompson",
+        "linkedin": "https://linkedin.com/in/avathompson"
+      }
+    },
+    {
+      "id": "speaker-002",
+      "name": "Marcus Chen",
+      "title": "Staff Software Engineer",
+      "company": "Orbital",
+      "avatar": "./assets/images/avatars/marcus-chen.png",
+      "bio": "Marcus builds distributed systems at Orbital and writes about reliability engineering. He previously worked on database internals at ScaleWorks.",
+      "talkIds": ["talk-002"],
+      "socials": {
+        "twitter": "https://twitter.com/marcuschen",
+        "github": "https://github.com/marcuschen",
+        "linkedin": "https://linkedin.com/in/marcuschen"
+      }
+    },
+    {
+      "id": "speaker-003",
+      "name": "Priya Raman",
+      "title": "ML Engineer",
+      "company": "Verdant AI",
+      "avatar": "./assets/images/avatars/priya-raman.png",
+      "bio": "Priya works on applied machine learning and model evaluation. She is passionate about making AI tools usable for non-experts.",
+      "talkIds": ["talk-003", "talk-008"],
+      "socials": {
+        "twitter": "https://twitter.com/priyaraman",
+        "github": "https://github.com/priyaraman",
+        "linkedin": "https://linkedin.com/in/priyaraman"
+      }
+    },
+    {
+      "id": "speaker-004",
+      "name": "Diego Alvarez",
+      "title": "Site Reliability Lead",
+      "company": "Cloudline",
+      "avatar": "./assets/images/avatars/diego-alvarez.png",
+      "bio": "Diego leads SRE at Cloudline and has helped teams adopt infrastructure as code and observability best practices.",
+      "talkIds": ["talk-004"],
+      "socials": {
+        "twitter": "https://twitter.com/diegoalvarez",
+        "github": "https://github.com/diegoalvarez",
+        "linkedin": "https://linkedin.com/in/diegoalvarez"
+      }
+    },
+    {
+      "id": "speaker-005",
+      "name": "Sofia Lindgren",
+      "title": "Design Director",
+      "company": "Studio Kite",
+      "avatar": "./assets/images/avatars/sofia-lindgren.png",
+      "bio": "Sofia designs products used by millions and advocates for accessible, research-driven design.",
+      "talkIds": ["talk-005"],
+      "socials": {
+        "twitter": "https://twitter.com/sofialindgren",
+        "github": "",
+        "linkedin": "https://linkedin.com/in/sofialindgren"
+      }
+    },
+    {
+      "id": "speaker-006",
+      "name": "Noah Park",
+      "title": "Developer Advocate",
+      "company": "EdgeWorks",
+      "avatar": "./assets/images/avatars/noah-park.png",
+      "bio": "Noah helps developers ship faster on the edge. He is a regular meetup organizer and content creator.",
+      "talkIds": ["talk-006", "talk-009"],
+      "socials": {
+        "twitter": "https://twitter.com/noahpark",
+        "github": "https://github.com/noahpark",
+        "linkedin": "https://linkedin.com/in/noahpark"
+      }
+    },
+    {
+      "id": "speaker-007",
+      "name": "Isabella Rossi",
+      "title": "Senior Frontend Engineer",
+      "company": "Form & Function",
+      "avatar": "./assets/images/avatars/isabella-rossi.png",
+      "bio": "Isabella focuses on design systems and motion. She has led accessibility initiatives across large product teams.",
+      "talkIds": ["talk-007"],
+      "socials": {
+        "twitter": "https://twitter.com/isabellarossi",
+        "github": "https://github.com/isabellarossi",
+        "linkedin": "https://linkedin.com/in/isabellarossi"
+      }
+    },
+    {
+      "id": "speaker-008",
+      "name": "Kwame Osei",
+      "title": "Backend Architect",
+      "company": "DataForge",
+      "avatar": "./assets/images/avatars/kwame-osei.png",
+      "bio": "Kwame designs data platforms and writes about API design and event-driven architectures.",
+      "talkIds": ["talk-002", "talk-010"],
+      "socials": {
+        "twitter": "https://twitter.com/kwameosei",
+        "github": "https://github.com/kwameosei",
+        "linkedin": "https://linkedin.com/in/kwameosei"
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "id": "talk-001",
+      "title": "The Next Decade of the Web",
+      "speakerId": "speaker-001",
+      "trackId": "track-01",
+      "dayId": "day-1",
+      "time": "09:00",
+      "endTime": "10:00",
+      "location": "Main Hall",
+      "isKeynote": true,
+      "description": "A look at the technologies, patterns, and platforms that will define the web over the next ten years.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-002",
+      "title": "Designing Reliable APIs at Scale",
+      "speakerId": "speaker-002",
+      "coSpeakerId": "speaker-008",
+      "trackId": "track-02",
+      "dayId": "day-1",
+      "time": "10:30",
+      "endTime": "11:15",
+      "location": "Room A",
+      "isKeynote": false,
+      "description": "Practical patterns for versioning, error handling, and observability in large-scale APIs.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-003",
+      "title": "Evaluating LLMs for Production",
+      "speakerId": "speaker-003",
+      "trackId": "track-03",
+      "dayId": "day-1",
+      "time": "11:30",
+      "endTime": "12:15",
+      "location": "Room B",
+      "isKeynote": false,
+      "description": "How to measure quality, latency, and cost when putting language models into real products.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-004",
+      "title": "Infrastructure as Code: Lessons Learned",
+      "speakerId": "speaker-004",
+      "trackId": "track-04",
+      "dayId": "day-2",
+      "time": "09:00",
+      "endTime": "09:45",
+      "location": "Room A",
+      "isKeynote": false,
+      "description": "Real-world stories from teams adopting IaC and the pitfalls to avoid.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-005",
+      "title": "Research-Driven Design Systems",
+      "speakerId": "speaker-005",
+      "trackId": "track-05",
+      "dayId": "day-2",
+      "time": "10:00",
+      "endTime": "10:45",
+      "location": "Room C",
+      "isKeynote": false,
+      "description": "How to ground design systems in user research and keep them accessible.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-006",
+      "title": "Shipping Faster on the Edge",
+      "speakerId": "speaker-006",
+      "coSpeakerId": "speaker-001",
+      "trackId": "track-04",
+      "dayId": "day-2",
+      "time": "11:00",
+      "endTime": "11:45",
+      "location": "Main Hall",
+      "isKeynote": false,
+      "description": "Edge runtimes, caching, and deployment strategies for low-latency experiences.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-007",
+      "title": "Motion with Meaning",
+      "speakerId": "speaker-007",
+      "trackId": "track-01",
+      "dayId": "day-3",
+      "time": "09:00",
+      "endTime": "09:45",
+      "location": "Room B",
+      "isKeynote": false,
+      "description": "Using animation to improve usability without sacrificing accessibility.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-008",
+      "title": "Practical AI Tooling for Devs",
+      "speakerId": "speaker-003",
+      "trackId": "track-03",
+      "dayId": "day-3",
+      "time": "10:00",
+      "endTime": "10:45",
+      "location": "Room A",
+      "isKeynote": false,
+      "description": "Tools and workflows that bring AI into everyday development tasks.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-009",
+      "title": "Edge Cases in Edge Caching",
+      "speakerId": "speaker-006",
+      "trackId": "track-02",
+      "dayId": "day-3",
+      "time": "11:00",
+      "endTime": "11:30",
+      "location": "Room C",
+      "isKeynote": false,
+      "description": "A deep dive into cache invalidation and consistency at the edge.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-010",
+      "title": "Event-Driven Architecture in Practice",
+      "speakerId": "speaker-008",
+      "trackId": "track-02",
+      "dayId": "day-3",
+      "time": "13:00",
+      "endTime": "13:45",
+      "location": "Main Hall",
+      "isKeynote": false,
+      "description": "Patterns for building resilient systems with events, queues, and streams.",
+      "isSaved": false
+    }
+  ],
+  "featuredSpeakerIds": [
+    "speaker-001",
+    "speaker-002",
+    "speaker-003",
+    "speaker-005"
+  ],
+  "scheduleHighlights": ["talk-001", "talk-003", "talk-006", "talk-010"]
+}

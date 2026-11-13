@@ -1,0 +1,10 @@
+@import "../index.css";
+
+.tracks-section h2 {
+    color: var(--color-accent);
+}
+
+li.tracks-section-list-item {
+    border: 1px solid var(--color-border);
+    box-shadow: 2px 2px;
+}

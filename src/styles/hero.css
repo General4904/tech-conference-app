@@ -1,0 +1,36 @@
+@import "../index.css";
+
+section.banner-section {
+    background-color: var(--color-peach);
+}
+
+.hero-section {
+    color: var(--color-bg);
+}
+
+.hero-background {
+    -webkit-text-stroke: 1px rgba(4, 19, 28, 0.15);
+}
+
+.hero-background p {
+    font-size: clamp(4rem, 14vw, 10rem);
+}
+
+.hero-footer {
+    border-top: 2px solid var(--color-bg);
+}
+
+.keynote-speaker-section {
+    background-color: var(--color-blue);
+}
+
+.keynote-section-button {
+    border: 1px solid var(--color-bg);
+    box-shadow: 3px 3px 0;
+}
+
+@media screen and (min-width:768px) {
+    h1 {
+        font-size: clamp(4rem, 4vw, 10rem);
+    }
+}

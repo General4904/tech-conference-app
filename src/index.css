@@ -1,111 +1,108 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* ==========================================================================
+   DEVHORIZON_26 — Design Tokens
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   KEY NOTES
+   - Dark navy page, one lime accent, pastel cards that always use dark text
+   - Headings: Space Grotesk, lowercase. Labels/nav/body: JetBrains Mono, uppercase
+   - Square corners, 1px silver borders, flat offset shadows (no blur)
+   - Terminal motifs: "//" before section labels, trailing "_" on the hero title
+   - Layout: 1 col mobile (<640px), 2 cols tablet (640-1023px), 4 cols desktop (1024px+)
+   ========================================================================== */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+/* Fonts (Google Fonts). Mono alternatives: Space Mono, IBM Plex Mono */
+
+@theme {
+  /* ---------- Core colours ---------- */
+  --color-bg: #04131c; /* page + dark card background */
+  --color-accent: #c6f56a; /* lime: logo, section labels, talk titles, active nav */
+  --color-text: #f2f6f8; /* main text on dark */
+  --color-text-muted: #a9b9c2; /* mono labels: roles, descriptions, footer links */
+  --color-border: #e6eef2; /* silver card/button borders */
+  --color-divider: #1e3340; /* thin rules: header, footer, inside cards */
+  --color-ink: #04131c; /* text on ANY pastel background */
+
+  /* ---------- Pastels (hero, keynote, speaker photos, schedule rows) ---------- */
+  --color-peach: #fdeee6; /* hero card */
+  --color-sky: #b5e8fc; /* keynote card, speaker bg */
+  --color-blue: #bcd9ff; /* speaker bg, accessibility row */
+  --color-lavender: #cac1fb; /* speaker bg, tooling row */
+  --color-yellow: #ffe8b8; /* speaker bg, frontend row */
+  --color-pink: #ffc8c2; /* speaker bg, performance row */
+
+  /* ---------- Track title colours (on dark track cards) ---------- */
+  --track-frontend: #ffe9dd;
+  --track-performance: #f6c6e0;
+  --track-accessibility: #b9c8ff;
+  --track-tooling: #cbbfff;
+
+  /* ---------- Track -> schedule row background ---------- */
+  --track-bg-performance: var(--color-pink);
+  --track-bg-frontend: var(--color-yellow);
+  --track-bg-accessibility: var(--color-blue);
+  --track-bg-tooling: var(--color-lavender);
+
+  /* ---------- Font families ---------- */
+  --font-display:
+    "Space Grotesk", system-ui, sans-serif; /* hero, names, titles, logo */
+  --font-mono:
+    "JetBrains Mono", ui-monospace, "Courier New", monospace; /* everything else */
+
+  /* ---------- Font weights ---------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* ---------- Font sizes (desktop) ---------- */
+  --text-hero: 3.5rem; /* 56px  hero headline */
+  --text-h2: 1.75rem; /* 28px  keynote name, schedule talk titles */
+  --text-h3: 1.25rem; /* 20px  track + speaker names, times */
+  --text-logo: 1.25rem; /* 20px */
+  --text-body: 0.8125rem; /* 13px  nav, buttons, footer */
+  --text-label: 0.75rem; /* 12px  roles, descriptions, section labels */
+  --text-caption: 0.6875rem; /* 11px  "SHOW DETAILS", "DAY 1", copyright */
+
+  /* ---------- Line height & letter spacing ---------- */
+  --leading-tight: 1.1; /* headings */
+  --leading-normal: 1.5; /* mono text */
+  --tracking-tight: -0.02em; /* large headings */
+  --tracking-wide: 0.05em; /* uppercase mono labels */
+
+  /* ---------- Spacing (8px base, approximate) ---------- */
+  --space-1: 0.5rem; /*  8px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px  gap between cards */
+  --space-4: 2rem; /* 32px */
+  --space-5: 3rem; /* 48px  between sections */
+
+  /* ---------- Layout ---------- */
+  --container-max: 1240px;
+  --container-pad: 2rem;
+
+  /* ---------- Borders & shadows ---------- */
+  --border: 1px solid var(--color-border);
+  --radius: 0; /* square corners everywhere */
+  --shadow-offset: 2px 2px 0 var(--color-border); /* flat offset shadow, no blur */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* ---------- Responsive overrides (type scale + padding only) ---------- */
+@media (max-width: 1023px) {
+  @theme {
+    --text-hero: 2.75rem;
+    --text-h2: 1.375rem;
+  } /* tablet: ~44px / ~22px */
 }
-
-body {
-  margin: 0;
+@media (max-width: 639px) {
+  @theme {
+    --text-hero: 1.75rem;
+    --text-h2: 1.125rem;
+    --container-pad: 0.75rem;
+  } /* mobile: ~28px / ~18px */
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  background-color: var(--color-bg);
+  font-family: "Space Grotesk", sans-serif;
 }

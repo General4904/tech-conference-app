@@ -1,0 +1,19 @@
+@import "../index.css";
+
+header {
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.brand {
+    color: var(--color-accent);
+}
+
+button.hamburger-section {
+    border: 1px solid var(--color-border);
+    color: var(--color-border);
+}
+
+.nav-item {
+    border: 1px solid var(--color-border);
+    padding: 5px 1em;
+}
