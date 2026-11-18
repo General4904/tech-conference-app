@@ -1,6 +1,8 @@
 @import "../index.css";
 
 header {
+    position: relative;
+    z-index: 10;
     border-bottom: 1px solid var(--color-divider);
 }
 
@@ -8,12 +10,134 @@ header {
     color: var(--color-accent);
 }
 
-button.hamburger-section {
-    border: 1px solid var(--color-border);
-    color: var(--color-border);
+.header-nav {
+    position: relative;
 }
 
 .nav-item {
+    display: block;
     border: 1px solid var(--color-border);
     padding: 5px 1em;
+    color: var(--color-border);
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.nav-icon {
+    display: none;
+}
+
+.hamburger-init {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.bar {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 2px;
+    background: var(--color-border);
+    transition: transform .3s, opacity .3s;
+}
+
+.bar.top-bar {
+    top: 10px;
+}
+
+.bar.middle-bar {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar.bottom-bar {
+    bottom: 10px;
+}
+
+.hamburger-init.active .bar.top-bar {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-init.active .bar.middle-bar {
+    opacity: 0;
+}
+
+.hamburger-init.active .bar.bottom-bar {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.nav-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list.is-open {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    display: flex;
+    min-width: 11rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.nav-list.is-open .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.nav-list.is-open .nav-icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.hamburger-init:focus-visible,
+.nav-item:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+    .hamburger-init {
+        display: none;
+    }
+
+    .nav-list,
+    .nav-list.is-open {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .nav-list.is-open .nav-item {
+        display: block;
+    }
+
+    .nav-list.is-open .nav-icon {
+        display: none;
+    }
 }

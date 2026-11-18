@@ -2,7 +2,7 @@ import "../styles/schedule-highlights.css";
 
 const ScheduleHighlights = ({ schedules, tracks, speakers }) => {
   return (
-    <section className="schedule-highlights-section my-7 pb-4">
+    <section className="schedule-highlights-section my-7 pb-4" id="schedule">
       <h2 className="text-sm mb-3 font-bold">// SCHEDULE_HIGHLIGHTS</h2>
 
       <ul className="schedule-highlights-section-list-items">

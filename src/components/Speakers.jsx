@@ -10,7 +10,7 @@ const Speakers = ({ speakers, schedules }) => {
   }
 
   return (
-    <section className="speakers-section mb-4">
+    <section className="speakers-section mb-4" id="speakers">
       <h2 className="text-sm font-bold mb-3">// FEATURED_SPEAKERS</h2>
       <ul className="speakers-section-list flex flex-col gap-3 mb-5 md:grid grid-cols-2 lg:grid-cols-3">
         {primarySpeakers.map((primarySpeaker) => (

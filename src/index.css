@@ -106,3 +106,7 @@
   background-color: var(--color-bg);
   font-family: "Space Grotesk", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
