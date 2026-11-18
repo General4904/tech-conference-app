@@ -21,7 +21,7 @@ const AboutSection = ({ conference, tracks }) => {
   });
   endDate = String(endDate);
   return (
-    <section className="about-section pb-5 lg:flex justify-between">
+    <section className="about-section pb-5 lg:grid lg:grid-cols-[2fr_3fr] lg:gap-8">
       <div className="about-section-left">
         <h2 className="mb-1">{conference.name}</h2>
         <p className="mb-6 about-section-description lg:w-[60%]">
@@ -30,8 +30,8 @@ const AboutSection = ({ conference, tracks }) => {
         </p>
       </div>
 
-      <div className="about-section-right md:flex justify-between items-center gap-5">
-        <ul className="about-section-nav mb-5 self-start">
+      <div className="about-section-right grid gap-6 md:grid-cols-3">
+        <ul className="about-section-nav mb-5 md:mb-0">
           <h2>// NAVIGATE</h2>
           <li className="about-section-nav-item">Home</li>
           <li className="about-section-nav-item">Schedule</li>
@@ -48,9 +48,9 @@ const AboutSection = ({ conference, tracks }) => {
             ))}
           </ul>
         </div>
-        <div className="about-section-info self-start">
+        <div className="about-section-info">
           <h2>// VENUE</h2>
-          <p className="lg:w-[20%]">{conference.location}</p>
+          <p>{conference.location}</p>
           <p>
             {startDate} - {endDate}, {year}
           </p>

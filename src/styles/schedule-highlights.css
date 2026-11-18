@@ -14,8 +14,29 @@
     box-shadow: 3px 3px var(--color-border);
 }
 
+.event-time,
+.schedule-highlights-details {
+    color: var(--color-bg);
+}
+
+.schedule-highlights-details {
+    border-right: 2px dashed var(--color-divider);
+
+}
+
+.schedule-highlights-section-list-item {
+    border: 1px solid var(--color-divider);
+}
+
 @media screen and (min-width:768px) {
     .schedule-highlights-section-list-item-track {
         writing-mode: sideways-lr;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .schedule-highlights-details {
+        border-right: none;
+        border-bottom: 2px dashed var(--color-divider);
     }
 }
