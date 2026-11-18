@@ -4,7 +4,10 @@ import { CiMenuBurger } from "react-icons/ci";
 
 const Header = ({ conferenceName }) => {
   return (
-    <header className="w-full flex justify-between items-center py-2 mb-3">
+    <header
+      className="w-full flex justify-between items-center py-2 mb-3"
+      id="top"
+    >
       <div className="brand py-3">{conferenceName}</div>
       <nav>
         <button className="hamburger-section p-2 md:hidden">

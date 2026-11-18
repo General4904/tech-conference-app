@@ -1,0 +1,21 @@
+@import "../index.css";
+
+.schedule-highlights-section {
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.schedule-highlights-section h2 {
+    color: var(--color-accent);
+}
+
+.schedule-highlights-section button {
+    border: 1px solid var(--color-border);
+    color: var(--color-border);
+    box-shadow: 3px 3px var(--color-border);
+}
+
+@media screen and (min-width:768px) {
+    .schedule-highlights-section-list-item-track {
+        writing-mode: sideways-lr;
+    }
+}

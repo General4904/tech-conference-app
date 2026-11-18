@@ -32,11 +32,11 @@ const ConferenceBanner = () => {
       <div className="hero-content z-50">
         <h1 className="text-2xl mb-[5em]">{conference.tagline}</h1>
 
-        <div className="hero-footer py-2 flex justify-between items-center text-md mt-auto font-extralight">
+        <div className="hero-footer py-2 flex flex-col gap-3 lg:flex-row lg:justify-between lg:items-center text-md mt-auto font-extralight">
           <div className="hero-footer-date">
-            {startDate} - {endDate}, {year}
+            {startDate} - {endDate}, {year}.
           </div>
-          <div className="hero-footer-text">{conference.location}</div>
+          <div className="hero-footer-text">{conference.location}.</div>
         </div>
       </div>
     </section>

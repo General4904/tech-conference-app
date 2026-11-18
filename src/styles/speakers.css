@@ -4,10 +4,32 @@
     color: var(--color-accent);
 }
 
-li.speakers-section-list-item {
-    border: 1px solid var(--color-border);
+.about-speaker-section {
+    border-left: 1px solid var(--color-text-muted);
+    border-right: 1px solid var(--color-text-muted);
+    border-bottom: 1px solid var(--color-text-muted);
 }
 
-.speakers-section-list-item .profile-section {
-    border-bottom: 1px solid var(--color-border);
+.about-speaker-section p.speaker-title-company-section {
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-text-muted);
+}
+
+.speakers-section p.topics {
+    color: var(--color-accent);
+}
+
+.speakers-section .view-all-speakers-button button {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    box-shadow: 3px 3px var(--color-divider);
+}
+
+@media screen and (min-width: 768px) {
+    .speakers-section .view-all-speakers-button button {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        color: var(--color-border);
+        box-shadow: 3px 3px var(--color-border);
+    }
 }

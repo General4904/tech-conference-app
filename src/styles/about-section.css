@@ -1,0 +1,16 @@
+@import "../index.css";
+
+.about-section {
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.about-section h2 {
+    color: var(--color-accent);
+}
+
+.about-section-description,
+.about-section-list-item,
+.about-section-nav-item,
+.about-section-info {
+    color: var(--color-text-muted);
+}

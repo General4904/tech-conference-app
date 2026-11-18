@@ -6,6 +6,9 @@ import KeynoteSpeaker from "./components/hero/KeynoteSpeaker";
 import data from "./data.json";
 import { ConferenceContext } from "./context/ConferenceContext";
 import Speakers from "./components/Speakers";
+import ScheduleHighlights from "./components/ScheduleHighlights";
+import AboutSection from "./components/AboutSection";
+import Footer from "./components/Footer";
 
 const App = () => {
   const conference = data.conference;
@@ -18,6 +21,7 @@ const App = () => {
   return (
     <>
       <Header conferenceName={conference.name} />
+
       <ConferenceContext.Provider
         value={{ conference, featuredKeynote, speakers, days }}
       >
@@ -26,8 +30,17 @@ const App = () => {
           <KeynoteSpeaker />
         </Hero>
       </ConferenceContext.Provider>
+
       <Tracks tracks={tracks} />
+
       <Speakers speakers={speakers} schedules={schedules} />
+      <ScheduleHighlights
+        schedules={schedules}
+        tracks={tracks}
+        speakers={speakers}
+      />
+      <AboutSection conference={conference} tracks={tracks} />
+      <Footer />
     </>
   );
 };
