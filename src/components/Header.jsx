@@ -43,7 +43,11 @@ const Header = ({ conferenceName }) => {
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <Icon className="nav-icon" aria-hidden="true" focusable="false" />
+                <Icon
+                  className="nav-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                />
                 {label}
               </a>
             </li>
