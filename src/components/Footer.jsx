@@ -7,13 +7,14 @@ const Footer = () => {
       <div className="attripution">
         <p className="mb-3">&copy; 2026 DEVHORIZON, ALL RIGHTS RESERVED.</p>
       </div>
-      {/* <div> */}
-      <a href="#top">
+      <a
+        href="#top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <p className="flex">
           BACK TO TOP <BsArrowUp className="ml-2 text-md" />
         </p>
       </a>
-      {/* </div> */}
     </section>
   );
 };

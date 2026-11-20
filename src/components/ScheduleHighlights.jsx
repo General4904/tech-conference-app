@@ -1,73 +1,92 @@
 import "../styles/schedule-highlights.css";
-import { useState } from "react";
+import { Link } from "react-router";
+import barcode from "/assets/images/barcode.svg";
+import star from "/assets/images/star-icon-design.svg";
 
 const ScheduleHighlights = ({ schedules, tracks, speakers }) => {
-  const [showAllSchedules, setshowAllSchedules] = useState(false);
-  let primarySchedules = schedules;
+  let primarySchedules = schedules.slice(0, 3);
 
-  if (!showAllSchedules) {
-    primarySchedules = schedules.slice(0, 3);
-  }
   return (
     <section className="schedule-highlights-section my-7 pb-4" id="schedule">
       <h2 className="text-sm mb-3 font-bold">// SCHEDULE_HIGHLIGHTS</h2>
 
       <ul className="schedule-highlights-section-list-items">
-        {primarySchedules.map((schedule) => {
-          const track = tracks.find((item) => item.id === schedule.trackId);
-          const speaker = speakers.find(
-            (item) => item.id === schedule.speakerId,
-          );
-
-          return (
-            <li
-              key={schedule.id}
-              className="schedule-highlights-section-list-item flex mb-3 flex-col md:flex-row"
+        {primarySchedules.map((primarySchedule) => (
+          <li
+            key={primarySchedule.id}
+            className="schedule-highlights-section-list-item mb-5 h-max flex flex-col justify-center items-center md:flex-row border border-white"
+          >
+            <h3
+              className="schedule-highlights-section-list-item-track text-center py-1"
+              style={{
+                color: `${tracks.find((track) => track.id === primarySchedule.trackId)?.color}`,
+              }}
             >
-              <p
-                className="schedule-highlights-section-list-item-track w-full p-3 text-center md:w-[5%]"
-                style={{
-                  color: track?.color,
-                }}
-              >
-                {track?.name}
-              </p>
+              {
+                tracks.find((track) => track.id === primarySchedule.trackId)
+                  ?.name
+              }
+            </h3>
 
+            <div
+              className="schedule-highlights-details justify-between md:self-stretch flex md:flex-7 flex-col py-4 px-2 w-full"
+              style={{
+                backgroundColor: `${tracks.find((track) => track.id === primarySchedule.trackId)?.color}`,
+              }}
+            >
+              <p className="font-bold text-lg mb-2">{primarySchedule.title}</p>
+              <p className="font-semibold text-sm mb-2">
+                {
+                  speakers.find(
+                    (speaker) => speaker.id === primarySchedule.speakerId,
+                  )?.name
+                }{" "}
+                <span className="font-light text-faint uppercase">
+                  {" "}
+                  //{" "}
+                  {
+                    speakers.find(
+                      (speaker) => speaker.id === primarySchedule.speakerId,
+                    )?.company
+                  }
+                </span>
+              </p>
+              <p className="text-xs cursor-pointer text-faint">
+                + SHOW DETAILS
+              </p>
+            </div>
+
+            <div
+              className="schedule-time flex md:flex-col md:flex-2 md:gap-3 justify-between items-center p-2 w-full gap-9"
+              style={{
+                backgroundColor: `${tracks.find((track) => track.id === primarySchedule.trackId)?.color}`,
+              }}
+            >
               <div
-                className="flex w-full min-w-0 flex-col p-5 md:w-[80%] schedule-highlights-details"
-                style={{ backgroundColor: track?.color }}
+                className="md:h-full
+              "
               >
-                <p className="self-start font-bold">{schedule.title}</p>
-                <p className="self-start">
-                  {speaker?.name} // {speaker?.company}
-                </p>
+                <p className="font-bold">{primarySchedule.time}</p>
+                <p>{primarySchedule.endTime}</p>
               </div>
 
-              <p
-                className="event-time flex w-full gap-2 flex-row items-center p-2 md:flex-1 md:flex-col md:justify-center md:items-center"
-                style={{ backgroundColor: track?.color }}
-              >
-                <span className="flex-1">
-                  {schedule.time} - {schedule.endTime}
-                </span>
-                <span className="barcode flex-1">
-                  <img src="./assets/images/barcode.svg" alt="" />
-                </span>
-                <span className="flex-1 uppercase">{schedule.dayId}</span>
-              </p>
-            </li>
-          );
-        })}
-        <div className="text-center">
-          <button
-            className="
-          p-3 font-semibold active:translate-0.5 transition cursor-pointer"
-            onClick={() => setshowAllSchedules((prevSchedule) => !prevSchedule)}
-          >
-            {showAllSchedules ? "SHOW LESS" : "VIEW FULL SCHEDULE"}
-          </button>
-        </div>
+              <div className="barcode">
+                <img src={barcode} alt="" />
+              </div>
+              <div className="uppercase md:hidden">{primarySchedule.dayId}</div>
+              <div className="star-icon hidden md:block">
+                <img src={star} alt="" />
+              </div>
+            </div>
+          </li>
+        ))}
       </ul>
+
+      <div className="text-center">
+        <Link to="/SchedulesPage">
+          <button className="p-3 cursor-pointer">VIEW ALL SCHEDULES</button>
+        </Link>
+      </div>
     </section>
   );
 };

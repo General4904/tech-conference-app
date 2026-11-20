@@ -14,9 +14,13 @@
     box-shadow: 3px 3px var(--color-border);
 }
 
-.event-time,
+.schedule-time,
 .schedule-highlights-details {
     color: var(--color-bg);
+}
+
+.text-faint {
+    color: #04131cb4;
 }
 
 .schedule-highlights-details {
@@ -32,9 +36,14 @@
     .schedule-highlights-section-list-item-track {
         writing-mode: sideways-lr;
     }
+
+    .schedule-highlights-details {
+        border-bottom: none;
+        border-right: 2px dashed var(--color-divider);
+    }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .schedule-highlights-details {
         border-right: none;
         border-bottom: 2px dashed var(--color-divider);

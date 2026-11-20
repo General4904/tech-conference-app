@@ -1,13 +1,8 @@
 import "../styles/speakers.css";
-import { useState } from "react";
+import { Link } from "react-router";
 
 const Speakers = ({ speakers, schedules }) => {
-  const [showAllSpeakers, setshowAllSpeakers] = useState(false);
-  let primarySpeakers = speakers;
-
-  if (!showAllSpeakers) {
-    primarySpeakers = speakers.slice(0, 3);
-  }
+  const primarySpeakers = speakers.slice(0, 3);
 
   return (
     <section className="speakers-section mb-4" id="speakers">
@@ -42,12 +37,11 @@ const Speakers = ({ speakers, schedules }) => {
       </ul>
 
       <div className="view-all-speakers-button flex justify-center items-center">
-        <button
-          onClick={() => setshowAllSpeakers((prevState) => !prevState)}
-          className="py-3 px-4 font-bold active:translate-0.5 transition cursor-pointer"
-        >
-          {showAllSpeakers ? "Show Less" : "Show All Speakers"}
-        </button>
+        <Link to="/SpeakersPage">
+          <button className="py-3 px-4 font-bold active:translate-0.5 transition cursor-pointer">
+            Show All Speakers
+          </button>
+        </Link>
       </div>
     </section>
   );

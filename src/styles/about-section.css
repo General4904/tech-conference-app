@@ -14,3 +14,7 @@
 .about-section-info {
     color: var(--color-text-muted);
 }
+
+.about-section-nav-item:hover {
+    color: var(--color-border);
+}

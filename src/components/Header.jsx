@@ -1,18 +1,19 @@
 import "../styles/header.css";
 import { useState } from "react";
 import { FiCalendar, FiHome, FiUsers } from "react-icons/fi";
+import { Link } from "react-router";
 
 const Header = ({ conferenceName }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigationItems = [
-    { label: "HOME", href: "#top", Icon: FiHome },
-    { label: "SCHEDULE", href: "#schedule", Icon: FiCalendar },
-    { label: "SPEAKERS", href: "#speakers", Icon: FiUsers },
+    { label: "HOME", href: "/", Icon: FiHome },
+    { label: "SCHEDULE", href: "./SchedulesPage", Icon: FiCalendar },
+    { label: "SPEAKERS", href: "./SpeakersPage", Icon: FiUsers },
   ];
 
   return (
     <header
-      className="w-full flex justify-between items-center py-2 mb-3"
+      className="w-full flex justify-between items-center py-2 px-4 mb-3"
       id="top"
     >
       <div className="brand py-3 self-center">{conferenceName}</div>
@@ -38,9 +39,9 @@ const Header = ({ conferenceName }) => {
         >
           {navigationItems.map(({ label, href, Icon }) => (
             <li key={href}>
-              <a
+              <Link
                 className="nav-item transition"
-                href={href}
+                to={href}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Icon
@@ -49,7 +50,7 @@ const Header = ({ conferenceName }) => {
                   focusable="false"
                 />
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

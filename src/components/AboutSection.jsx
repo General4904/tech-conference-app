@@ -1,4 +1,5 @@
 import "../styles/about-section.css";
+import { Link } from "react-router";
 
 const AboutSection = ({ conference, tracks }) => {
   let startDate = new Date(conference.date);
@@ -33,9 +34,15 @@ const AboutSection = ({ conference, tracks }) => {
       <div className="about-section-right grid gap-6 md:grid-cols-3">
         <ul className="about-section-nav mb-5 md:mb-0">
           <h2>// NAVIGATE</h2>
-          <li className="about-section-nav-item">Home</li>
-          <li className="about-section-nav-item">Schedule</li>
-          <li className="about-section-nav-item">Speakers</li>
+          <Link to="/">
+            <li className="about-section-nav-item cursor-pointer">Home</li>
+          </Link>
+          <Link to="/SchedulesPage">
+            <li className="about-section-nav-item cursor-pointer">Schedule</li>
+          </Link>
+          <Link to="/SpeakersPage">
+            <li className="about-section-nav-item cursor-pointer">Speakers</li>
+          </Link>
         </ul>
 
         <div className="about-section-tracks">
