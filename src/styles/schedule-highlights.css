@@ -8,6 +8,13 @@
     color: var(--color-accent);
 }
 
+.filter-item {
+    border: 1px solid var(--color-border);
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 2px 2px;
+}
+
 .schedule-highlights-section button {
     border: 1px solid var(--color-border);
     color: var(--color-border);

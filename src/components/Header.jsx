@@ -1,7 +1,7 @@
 import "../styles/header.css";
 import { useState } from "react";
 import { FiCalendar, FiHome, FiUsers } from "react-icons/fi";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 const Header = ({ conferenceName }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +39,10 @@ const Header = ({ conferenceName }) => {
         >
           {navigationItems.map(({ label, href, Icon }) => (
             <li key={href}>
-              <Link
-                className="nav-item transition"
+              <NavLink
+                className={({ isActive }) =>
+                  `py-2 px-4 nav-item transition ${isActive ? "nav-item-active" : ""}`
+                }
                 to={href}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -50,7 +52,7 @@ const Header = ({ conferenceName }) => {
                   focusable="false"
                 />
                 {label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

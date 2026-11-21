@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Elena Vasquez avatar">
+  <rect width="640" height="480" fill="#bcd9ff"/>
+  <circle cx="320" cy="174" r="88" fill="#04131c"/>
+  <path d="M142 480c12-116 80-176 178-176s166 60 178 176" fill="#04131c"/>
+  <path d="M244 170c0-48 34-82 76-82s76 34 76 82v20c0 49-34 83-76 83s-76-34-76-83z" fill="#fdeee6"/>
+  <path d="M240 160c3-66 37-102 87-102 48 0 79 31 84 89-28-7-51-25-67-49-22 31-59 52-104 62z" fill="#1e3340"/>
+</svg>

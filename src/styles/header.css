@@ -21,11 +21,16 @@ header {
 .nav-item {
     display: block;
     border: 1px solid var(--color-border);
-    padding: 5px 1em;
     color: var(--color-border);
     font-family: var(--font-mono);
     font-size: var(--text-body);
     text-decoration: none;
+}
+
+.nav-item-active {
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 3px 3px;
 }
 
 .nav-item:hover {

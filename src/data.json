@@ -3,7 +3,7 @@
     "name": "DevConf 2025",
     "tagline": "Where builders shape the future",
     "date": "2025-10-15",
-    "endDate": "2025-10-17",
+    "endDate": "2025-10-19",
     "location": "Metro Convention Center, San Francisco, CA",
     "heroImage": "./assets/images/hero.jpg"
   },
@@ -50,6 +50,18 @@
       "name": "Design & UX",
       "color": "#FD79A8",
       "description": "Product design, research, and interaction patterns."
+    },
+    {
+      "id": "track-06",
+      "name": "Accessibility & Inclusion",
+      "color": "#F1C40F",
+      "description": "Inclusive design, accessibility testing, and equitable user experiences."
+    },
+    {
+      "id": "track-07",
+      "name": "Engineering Leadership",
+      "color": "#A29BFE",
+      "description": "Team growth, engineering culture, and sustainable software delivery."
     }
   ],
   "days": [
@@ -70,6 +82,18 @@
       "label": "Day 3",
       "date": "2025-10-17",
       "name": "The Future"
+    },
+    {
+      "id": "day-4",
+      "label": "Day 4",
+      "date": "2025-10-18",
+      "name": "Building for Scale"
+    },
+    {
+      "id": "day-5",
+      "label": "Day 5",
+      "date": "2025-10-19",
+      "name": "People & Practice"
     }
   ],
   "speakers": [
@@ -80,7 +104,7 @@
       "company": "Nimbus Labs",
       "avatar": "./assets/images/avatars/ava-thompson.png",
       "bio": "Ava has spent 15 years building web platforms and leads the platform team at Nimbus Labs. She is a frequent keynote speaker and open-source contributor.",
-      "talkIds": ["talk-001", "talk-006"],
+      "talkIds": ["talk-001", "talk-006", "talk-011"],
       "socials": {
         "twitter": "https://twitter.com/avathompson",
         "github": "https://github.com/avathompson",
@@ -94,7 +118,7 @@
       "company": "Orbital",
       "avatar": "./assets/images/avatars/marcus-chen.png",
       "bio": "Marcus builds distributed systems at Orbital and writes about reliability engineering. He previously worked on database internals at ScaleWorks.",
-      "talkIds": ["talk-002"],
+      "talkIds": ["talk-002", "talk-012"],
       "socials": {
         "twitter": "https://twitter.com/marcuschen",
         "github": "https://github.com/marcuschen",
@@ -108,7 +132,7 @@
       "company": "Verdant AI",
       "avatar": "./assets/images/avatars/priya-raman.png",
       "bio": "Priya works on applied machine learning and model evaluation. She is passionate about making AI tools usable for non-experts.",
-      "talkIds": ["talk-003", "talk-008"],
+      "talkIds": ["talk-003", "talk-008", "talk-013"],
       "socials": {
         "twitter": "https://twitter.com/priyaraman",
         "github": "https://github.com/priyaraman",
@@ -183,6 +207,34 @@
         "twitter": "https://twitter.com/kwameosei",
         "github": "https://github.com/kwameosei",
         "linkedin": "https://linkedin.com/in/kwameosei"
+      }
+    },
+    {
+      "id": "speaker-009",
+      "name": "Elena Vasquez",
+      "title": "Accessibility Engineering Lead",
+      "company": "Civic Pixel",
+      "avatar": "./assets/images/avatars/elena-vasquez.svg",
+      "bio": "Elena helps product teams build accessible interfaces and establish inclusive engineering practices.",
+      "talkIds": ["talk-014"],
+      "socials": {
+        "twitter": "",
+        "github": "",
+        "linkedin": ""
+      }
+    },
+    {
+      "id": "speaker-010",
+      "name": "Samir Patel",
+      "title": "Engineering Manager",
+      "company": "Northstar",
+      "avatar": "./assets/images/avatars/samir-patel.svg",
+      "bio": "Samir leads engineering teams through platform migrations and focuses on sustainable software delivery.",
+      "talkIds": ["talk-015"],
+      "socials": {
+        "twitter": "",
+        "github": "",
+        "linkedin": ""
       }
     }
   ],
@@ -317,6 +369,71 @@
       "location": "Main Hall",
       "isKeynote": false,
       "description": "Patterns for building resilient systems with events, queues, and streams.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-011",
+      "title": "Designing Resilient Frontend Platforms",
+      "speakerId": "speaker-001",
+      "trackId": "track-01",
+      "dayId": "day-4",
+      "time": "09:00",
+      "endTime": "09:45",
+      "location": "Main Hall",
+      "isKeynote": false,
+      "description": "Strategies for keeping large frontend applications reliable as teams, features, and user needs grow.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-012",
+      "title": "A Practical Guide to Database Migrations",
+      "speakerId": "speaker-002",
+      "trackId": "track-02",
+      "dayId": "day-4",
+      "time": "10:00",
+      "endTime": "10:45",
+      "location": "Room A",
+      "isKeynote": false,
+      "description": "Planning safe schema changes with backwards compatibility, observability, and clear rollback strategies.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-014",
+      "title": "Accessibility Testing That Scales",
+      "speakerId": "speaker-009",
+      "trackId": "track-06",
+      "dayId": "day-4",
+      "time": "11:00",
+      "endTime": "11:45",
+      "location": "Room B",
+      "isKeynote": false,
+      "description": "Combining automated checks and hands-on testing to make accessibility part of everyday delivery.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-013",
+      "title": "Evaluating AI Features Beyond Accuracy",
+      "speakerId": "speaker-003",
+      "trackId": "track-03",
+      "dayId": "day-5",
+      "time": "09:00",
+      "endTime": "09:45",
+      "location": "Room B",
+      "isKeynote": false,
+      "description": "A practical framework for assessing the usefulness, reliability, and user impact of AI features.",
+      "isSaved": false
+    },
+    {
+      "id": "talk-015",
+      "title": "Growing Teams Without Growing the Bottlenecks",
+      "speakerId": "speaker-010",
+      "trackId": "track-07",
+      "dayId": "day-5",
+      "time": "10:00",
+      "endTime": "10:45",
+      "location": "Room C",
+      "isKeynote": false,
+      "description": "Team habits and platform choices that help engineering organizations scale sustainably.",
       "isSaved": false
     }
   ],
