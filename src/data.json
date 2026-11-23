@@ -443,5 +443,7 @@
     "speaker-003",
     "speaker-005"
   ],
-  "scheduleHighlights": ["talk-001", "talk-003", "talk-006", "talk-010"]
+  "scheduleHighlights": ["talk-001", "talk-003", "talk-006", "talk-010"],
+
+  "savedSchedule": []
 }

@@ -15,6 +15,97 @@
     box-shadow: 2px 2px;
 }
 
+.filter-item.active-filter {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
+    box-shadow: 2px 2px var(--color-accent);
+}
+
+.schedule-highlights-section .show-details-button {
+    align-self: flex-start;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-ink);
+    box-shadow: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.speaker-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(4 19 28 / 80%);
+}
+
+.speaker-dialog {
+    position: relative;
+    width: min(100%, 32rem);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: 4px 4px var(--color-accent);
+}
+
+.speaker-dialog-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.speaker-dialog-avatar {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.speaker-dialog h2 {
+    margin-bottom: 0.25rem;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.speaker-dialog-title-company {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+.speaker-dialog-bio {
+    line-height: 1.6;
+}
+
+.speaker-dialog-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.speaker-dialog-socials a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
 .schedule-highlights-section button {
     border: 1px solid var(--color-border);
     color: var(--color-border);
