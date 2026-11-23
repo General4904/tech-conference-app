@@ -13,6 +13,15 @@
     padding: 5px;
     border-radius: 6px;
     box-shadow: 2px 2px;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.filter-item:hover {
+    transform: translate(-1px, -1px);
+    border-color: var(--color-accent);
+    background-color: var(--color-divider);
+    color: var(--color-accent);
+    box-shadow: 3px 3px var(--color-accent);
 }
 
 .filter-item.active-filter {
@@ -20,6 +29,38 @@
     border-color: var(--color-accent);
     color: var(--color-bg);
     box-shadow: 2px 2px var(--color-accent);
+}
+
+.filter-item.active-filter:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px var(--color-accent);
+}
+
+.schedule-highlights-section .schedule-save-button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.schedule-save-button img {
+    transition: transform 150ms ease;
+}
+
+.schedule-save-button:hover img {
+    transform: scale(1.1);
+}
+
+.schedule-save-button.is-saved {
+    border-radius: 50%;
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.schedule-save-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
 .schedule-highlights-section .show-details-button {

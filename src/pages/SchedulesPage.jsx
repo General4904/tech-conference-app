@@ -3,6 +3,11 @@ import star from "/assets/images/star-icon-design.svg";
 import { useState } from "react";
 import SpeakerDetailsModal from "../components/SpeakerDetailsModal";
 
+function readSavedSchedules() {
+  const savedData = localStorage.getItem("savedSchedule");
+  return savedData ? JSON.parse(savedData) : [];
+}
+
 const SchedulesPage = ({ data }) => {
   const schedules = data.schedule;
   const tracks = data.tracks;
@@ -13,29 +18,43 @@ const SchedulesPage = ({ data }) => {
   const [activeFilter, setActiveFilter] = useState({ type: "all" });
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
   const [selectedSchedule, setSelectedSchedule] = useState(null);
+  const [savedScheduleIds, setSavedScheduleIds] = useState(() => {
+    try {
+      return readSavedSchedules().map((schedule) => schedule.id);
+    } catch (error) {
+      console.error("Could not load saved schedules.", error);
+      return [];
+    }
+  });
 
   const isActiveFilter = (type, id) =>
     activeFilter.type === type && (id === undefined || activeFilter.id === id);
 
-  function saveNewSchedule(scheduleId) {
-    const savedData = localStorage.getItem("savedSchedule");
-    const savedSchedules = savedData ? JSON.parse(savedData) : [];
+  function toggleSavedSchedule(scheduleId) {
     const schedule = schedules.find((schedule) => schedule.id === scheduleId);
+    const savedSchedules = readSavedSchedules();
+    const isSaved = savedSchedules.some((item) => item.id === scheduleId);
+    const updatedSavedSchedules = isSaved
+      ? savedSchedules.filter((item) => item.id !== scheduleId)
+      : [...savedSchedules, schedule];
 
-    if (savedSchedules.some((item) => item.id === scheduleId)) return;
-    const newSavedSchedule = [...savedSchedules, schedule];
-
-    localStorage.setItem("savedSchedule", JSON.stringify(newSavedSchedule));
+    localStorage.setItem(
+      "savedSchedule",
+      JSON.stringify(updatedSavedSchedules),
+    );
+    setSavedScheduleIds(updatedSavedSchedules.map((item) => item.id));
+    if (activeFilter.type === "saved") {
+      setFilteredSchedule(updatedSavedSchedules);
+    }
   }
 
   function getSavedSchedules() {
     try {
-      const data = localStorage.getItem("savedSchedule");
-      if (!data) throw new Error();
-      const savedSchedules = JSON.parse(data);
+      const savedSchedules = readSavedSchedules();
       setFilteredSchedule(savedSchedules);
+      setSavedScheduleIds(savedSchedules.map((schedule) => schedule.id));
     } catch (error) {
-      console.error(error);
+      console.error("Could not load saved schedules.", error);
     }
   }
 
@@ -186,10 +205,17 @@ const SchedulesPage = ({ data }) => {
               </div>
               <div className="uppercase md:hidden">{schedule.dayId}</div>
               <div
-                className="star-icon md:block cursor-pointer"
-                onClick={() => saveNewSchedule(schedule.id)}
+                className="star-icon md:block"
               >
-                <img src={star} alt="" />
+                <button
+                  type="button"
+                  className={`schedule-save-button${savedScheduleIds.includes(schedule.id) ? " is-saved" : ""}`}
+                  aria-label={`${savedScheduleIds.includes(schedule.id) ? "Remove" : "Save"} ${schedule.title} ${savedScheduleIds.includes(schedule.id) ? "from" : "to"} your schedule`}
+                  aria-pressed={savedScheduleIds.includes(schedule.id)}
+                  onClick={() => toggleSavedSchedule(schedule.id)}
+                >
+                  <img src={star} alt="" />
+                </button>
               </div>
             </div>
           </li>
