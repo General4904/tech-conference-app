@@ -2,9 +2,13 @@ import "../styles/schedule-highlights.css";
 import { Link } from "react-router";
 import barcode from "/assets/images/barcode.svg";
 import star from "/assets/images/star-icon-design.svg";
+import { useState } from "react";
+import SpeakerDetailsModal from "./SpeakerDetailsModal";
 
-const ScheduleHighlights = ({ schedules, tracks, speakers }) => {
+const ScheduleHighlights = ({ schedules, tracks, speakers, days }) => {
   let primarySchedules = schedules.slice(0, 3);
+  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [selectedSchedule, setSelectedSchedule] = useState(null);
 
   return (
     <section className="schedule-highlights-section my-7 pb-4" id="schedule">
@@ -51,9 +55,21 @@ const ScheduleHighlights = ({ schedules, tracks, speakers }) => {
                   }
                 </span>
               </p>
-              <p className="text-xs cursor-pointer text-faint">
+              <button
+                type="button"
+                className="show-details-button text-xs"
+                onClick={() => {
+                  const speaker = speakers.find(
+                    (speaker) => speaker.id === primarySchedule.speakerId,
+                  );
+                  if (speaker) {
+                    setSelectedSpeaker(speaker);
+                    setSelectedSchedule(primarySchedule);
+                  }
+                }}
+              >
                 + SHOW DETAILS
-              </p>
+              </button>
             </div>
 
             <div
@@ -87,6 +103,15 @@ const ScheduleHighlights = ({ schedules, tracks, speakers }) => {
           <button className="p-3 cursor-pointer">VIEW ALL SCHEDULES</button>
         </Link>
       </div>
+      <SpeakerDetailsModal
+        speaker={selectedSpeaker}
+        schedule={selectedSchedule}
+        day={days.find((day) => day.id === selectedSchedule?.dayId)}
+        track={tracks.find(
+          (track) => track.id === selectedSchedule?.trackId,
+        )}
+        onClose={() => setSelectedSpeaker(null)}
+      />
     </section>
   );
 };

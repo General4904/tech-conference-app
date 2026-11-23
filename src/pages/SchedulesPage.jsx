@@ -1,6 +1,7 @@
 import barcode from "/assets/images/barcode.svg";
 import star from "/assets/images/star-icon-design.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import SpeakerDetailsModal from "../components/SpeakerDetailsModal";
 
 const SchedulesPage = ({ data }) => {
   const schedules = data.schedule;
@@ -11,20 +12,10 @@ const SchedulesPage = ({ data }) => {
   const [filteredSchedule, setFilteredSchedule] = useState(schedules);
   const [activeFilter, setActiveFilter] = useState({ type: "all" });
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [selectedSchedule, setSelectedSchedule] = useState(null);
 
   const isActiveFilter = (type, id) =>
     activeFilter.type === type && (id === undefined || activeFilter.id === id);
-
-  useEffect(() => {
-    if (!selectedSpeaker) return;
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") setSelectedSpeaker(null);
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedSpeaker]);
 
   function saveNewSchedule(scheduleId) {
     const savedData = localStorage.getItem("savedSchedule");
@@ -166,7 +157,10 @@ const SchedulesPage = ({ data }) => {
                   const speaker = speakers.find(
                     (speaker) => speaker.id === schedule.speakerId,
                   );
-                  if (speaker) setSelectedSpeaker(speaker);
+                  if (speaker) {
+                    setSelectedSpeaker(speaker);
+                    setSelectedSchedule(schedule);
+                  }
                 }}
               >
                 + SHOW DETAILS
@@ -201,63 +195,15 @@ const SchedulesPage = ({ data }) => {
           </li>
         ))}
       </ul>
-      {selectedSpeaker && (
-        <div
-          className="speaker-overlay"
-          onClick={() => setSelectedSpeaker(null)}
-        >
-          <section
-            className="speaker-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="speaker-dialog-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="speaker-dialog-close"
-              aria-label="Close speaker details"
-              onClick={() => setSelectedSpeaker(null)}
-            >
-              &times;
-            </button>
-            <img
-              className="speaker-dialog-avatar"
-              src={selectedSpeaker.avatar}
-              alt={selectedSpeaker.name}
-            />
-            <h2 id="speaker-dialog-title">{selectedSpeaker.name}</h2>
-            <p className="speaker-dialog-title-company">
-              {selectedSpeaker.title} at {selectedSpeaker.company}
-            </p>
-            <p className="speaker-dialog-bio">{selectedSpeaker.bio}</p>
-            {selectedSpeaker.socials && (
-              <div className="speaker-dialog-socials">
-                {Object.entries(selectedSpeaker.socials)
-                  .filter(([, url]) => url)
-                  .map(([network, url]) => {
-                    const labels = {
-                      twitter: "Twitter",
-                      github: "GitHub",
-                      linkedin: "LinkedIn",
-                    };
-
-                    return (
-                      <a
-                        key={network}
-                        href={url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {labels[network] || network}
-                      </a>
-                    );
-                  })}
-              </div>
-            )}
-          </section>
-        </div>
-      )}
+      <SpeakerDetailsModal
+        speaker={selectedSpeaker}
+        schedule={selectedSchedule}
+        day={days.find((day) => day.id === selectedSchedule?.dayId)}
+        track={tracks.find(
+          (track) => track.id === selectedSchedule?.trackId,
+        )}
+        onClose={() => setSelectedSpeaker(null)}
+      />
     </section>
   );
 };

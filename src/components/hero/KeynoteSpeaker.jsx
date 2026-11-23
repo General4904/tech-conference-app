@@ -1,14 +1,20 @@
 import { FaArrowRight } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ConferenceContext } from "../../context/ConferenceContext";
+import SpeakerDetailsModal from "../SpeakerDetailsModal";
 
 const KeynoteSpeaker = () => {
-  const { featuredKeynote, speakers, days } = useContext(ConferenceContext);
+  const { featuredKeynote, speakers, days, tracks } =
+    useContext(ConferenceContext);
+  const [isSpeakerDetailsOpen, setIsSpeakerDetailsOpen] = useState(false);
   const keynoteSpeaker = speakers.find(
     (speaker) => featuredKeynote.speakerId === speaker.id,
   );
 
   const keynoteDay = days.find((day) => featuredKeynote.day === day.id);
+  const keynoteTrack = tracks.find(
+    (track) => track.id === featuredKeynote.trackId,
+  );
 
   const date = new Date(keynoteDay.date);
   date.toISOString();
@@ -31,7 +37,10 @@ const KeynoteSpeaker = () => {
         {keynoteDate} / {featuredKeynote.time} / {featuredKeynote.location}
       </p>
 
-      <button className="keynote-section-button self-start px-5 py-2 gap-3 md:px-9 md:py-4 flex items-center cursor-pointer active:translate-0.5 transition">
+      <button
+        className="keynote-section-button self-start px-5 py-2 gap-3 md:px-9 md:py-4 flex items-center cursor-pointer active:translate-0.5 transition"
+        onClick={() => setIsSpeakerDetailsOpen(true)}
+      >
         <p>VIEW TALK</p>
         <p>
           <FaArrowRight />
@@ -44,6 +53,13 @@ const KeynoteSpeaker = () => {
       >
         {/* <img src={keynoteSpeaker.avatar} alt="" className="w-full h-full" /> */}
       </div>
+      <SpeakerDetailsModal
+        speaker={isSpeakerDetailsOpen ? keynoteSpeaker : null}
+        schedule={featuredKeynote}
+        day={keynoteDay}
+        track={keynoteTrack}
+        onClose={() => setIsSpeakerDetailsOpen(false)}
+      />
     </section>
   );
 };

@@ -16,7 +16,7 @@ const Homepage = ({ data }) => {
   return (
     <>
       <ConferenceContext.Provider
-        value={{ conference, featuredKeynote, speakers, days }}
+        value={{ conference, featuredKeynote, speakers, days, tracks }}
       >
         <Hero>
           <ConferenceBanner />
@@ -31,6 +31,7 @@ const Homepage = ({ data }) => {
         schedules={schedules}
         tracks={tracks}
         speakers={speakers}
+        days={days}
       />
     </>
   );
