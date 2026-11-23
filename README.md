@@ -1,21 +1,53 @@
-<<<<<<< HEAD
-# React + Vite
+# Tech Conference App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app for exploring DevConf 2025, its speakers, and its talk schedule.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Conference homepage with a featured keynote, speaker highlights, and schedule highlights
+- Speaker directory with speaker bios and talk listings
+- Schedule filtering by conference day and track
+- Saved talks, persisted in the browser's `localStorage`
+- Talk details dialog with schedule and speaker information
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Requirements
 
-## Expanding the ESLint configuration
+- Node.js
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# tech-conference-app
-A tech conference app, built with ReactJS and Tailwind CSS
->>>>>>> origin/main
+### Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+Vite prints a local URL in the terminal when the development server is ready.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+
+## App routes
+
+- `/` — Conference homepage
+- `/SpeakersPage` — Speaker directory
+- `/SchedulesPage` — Filterable schedule and saved talks
+
+## Conference data
+
+The conference content is defined in [`src/data.json`](./src/data.json), including the conference details, keynote, days, tracks, speakers, and schedule. Saved talks are stored in the browser and are not shared between devices or browsers.
+
+## Tech stack
+
+- React
+- React Router
+- Vite
+- Tailwind CSS
