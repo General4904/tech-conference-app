@@ -16,7 +16,13 @@ const Header = ({ conferenceName }) => {
       className="w-full flex justify-between items-center py-2 px-4 mb-3"
       id="top"
     >
-      <div className="brand py-3 self-center">{conferenceName}</div>
+      <NavLink
+        className="brand py-3 self-center no-underline"
+        to="/"
+        aria-label={`${conferenceName} home`}
+      >
+        {conferenceName}
+      </NavLink>
       <nav className="header-nav" aria-label="Main navigation">
         <button
           className={`hamburger-init${isMenuOpen ? " active" : ""}`}
