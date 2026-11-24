@@ -4,6 +4,17 @@ const SpeakerDetailsModal = ({ speaker, schedule, day, track, onClose }) => {
   useEffect(() => {
     if (!speaker) return;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [speaker]);
+
+  useEffect(() => {
+    if (!speaker) return;
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") onClose();
     };
